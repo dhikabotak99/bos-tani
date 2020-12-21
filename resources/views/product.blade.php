@@ -20,10 +20,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/">Home</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/product">Produk</a>
+                            <a class="nav-link" href="/product">Produk<span class="sr-only">(current)</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/investasi">Investasi</a>
@@ -54,33 +54,6 @@
         <br>
         <br>
         <br>
-        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"></li>
-                <li data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></li>
-                <li data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="/images/tomat.jpg" class="d-block" height="465px" width="1349px">
-                </div>
-                <div class="carousel-item">
-                    <img src="/images/brokoli.jpg" class="d-block" height="465px" width="1349px">
-                </div>
-                <div class="carousel-item">
-                    <img src="/images/bayam.jpg" class="d-block" height="465px" width="1349px">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleDark" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleDark" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </a>
-        </div>
-        <br>
         @if(count($product)>0)
         <div class="row g-3 d-flex justify-content-center">
             @foreach($product as $p)
@@ -95,7 +68,6 @@
             </div>
             &nbsp;&nbsp;
             @endforeach
-            
         </div>
         @else
         <center>

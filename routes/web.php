@@ -19,5 +19,13 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\productController;
 Route::get('/', [productController::class, 'index']);
-// Route::get('/order-product/{id}', [orderController::class, 'order']);
+Route::get('/product', [productController::class, 'allProduct']);
+
 // Route::post('/orders', [orderController::class, 'formorder']);
+
+use App\Http\Controllers\investasiController;
+Route::get('/investasi', [investasiController::class, 'index']);
+
+use App\Http\Controllers\orderController;
+Route::get('/order', [orderController::class, 'index']);
+// Route::get('/order-product/{id}', [orderController::class, 'order']);
