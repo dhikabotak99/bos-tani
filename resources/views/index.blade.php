@@ -83,7 +83,7 @@
         <br>
         @if(count($product)>0)
         <div class="row g-3 d-flex justify-content-center">
-            @foreach($product as $p)
+            @foreach($product as $index=>$p)
             <div class="card" style="width: 18rem;">
                 <img src="{{url('/images/'.$p->img_path)}}" class="card-img-top" height="262px" width="262px">
                 <div class="card-body">
@@ -94,6 +94,9 @@
                 </div>
             </div>
             &nbsp;&nbsp;
+                @if ($index == 7)
+                    @break
+                @endif
             @endforeach
             
         </div>
