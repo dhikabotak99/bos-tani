@@ -30,7 +30,7 @@
                         </li>
                     </ul>
                 </div>
-                <form class="d-flex">
+                <form action="/login" class="d-flex">
                     <button class="btn btn-outline-success" type="submit">Login</button>
                 </form>
                 </div>

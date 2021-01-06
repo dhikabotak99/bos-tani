@@ -28,4 +28,13 @@ Route::get('/investasi', [investasiController::class, 'index']);
 
 use App\Http\Controllers\orderController;
 Route::get('/order', [orderController::class, 'index']);
-// Route::get('/order-product/{id}', [orderController::class, 'order']);
+Route::get('/order-product/{id}', [orderController::class, 'order']);
+
+// Route::get('/login', [userController::class, 'index']);
+Route::get('/login', function () {
+        return view('login');
+    });
+
+Route::get('/register', function () {
+        return view('register');
+    });
