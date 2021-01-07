@@ -30,9 +30,7 @@
                         </li>
                     </ul>
                 </div>
-                <form action="/login" class="d-flex">
-                    <button class="btn btn-outline-success" type="submit">Login</button>
-                </form>
+                <a href="login" class="btn btn-outline-success" type="submit">Login</a>
                 </div>
             </nav>
         </header>

@@ -11,7 +11,9 @@
 </head>
 
 <body style="background-color: rgb(232, 250, 254);">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
             <a class="navbar-brand" href="/">BOS Tani</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -22,20 +24,26 @@
                         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Product</a>
+                        <a class="nav-link" href="/product">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/investasi">Investasi</a>
                     </li>
                 </ul>
             </div>
-            <form class="d-flex">
-                <button class="btn btn-outline-success" type="submit">Login</button>
-            </form>
+            <a href="login" class="btn btn-outline-success" type="submit">Login</a>
+            </div>
         </nav>
+    </header>
     <?php
     if (isset($_GET['alert'])) {
     ?>
         <div class="alert alert-warning" role="alert"> Logout! </div>
 
     <?php } ?>
+    <br>
+    <br>
+    <br>
     <div class="container mt-3 d-flex justify-content-center">
         <form action="" method="post" enctype="multipart/form-data">
             <div class="row">

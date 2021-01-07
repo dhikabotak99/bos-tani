@@ -20,19 +20,17 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a class="nav-link" href="/">Home</span></a>
+                            <a class="nav-link" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/product">Produk<span class="sr-only">(current)</a>
+                            <a class="nav-link" href="/product">Produk <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/investasi">Investasi</a>
                         </li>
                     </ul>
                 </div>
-                <form class="d-flex">
-                    <button class="btn btn-outline-success" type="submit">Login</button>
-                </form>
+                <a href="login" class="btn btn-outline-success" type="submit">Login</a>
                 </div>
             </nav>
         </header>
