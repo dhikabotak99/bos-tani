@@ -30,11 +30,6 @@ use App\Http\Controllers\orderController;
 Route::get('/order', [orderController::class, 'index']);
 Route::get('/order-product/{id}', [orderController::class, 'order']);
 
-// Route::get('/login', [userController::class, 'index']);
-Route::get('/login', function () {
-        return view('login');
-    });
-
-Route::get('/register', function () {
-        return view('register');
-    });
+use App\Http\Controllers\userController;
+Route::get('/login', [userController::class, 'login']);
+Route::get('/register', [userController::class, 'register']);

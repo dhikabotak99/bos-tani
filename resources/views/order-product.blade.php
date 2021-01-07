@@ -6,6 +6,15 @@
         <!-- Bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel-rtl/">
+
+        <style>
+            body {
+                background-color: rgb(217, 217, 211);
+            }
+            #barang {
+                background-color: white;
+            }
+        </style>
     </head>
     <body>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
@@ -40,18 +49,40 @@
         <br>
         <br>
         <br>
-        <div class="d-flex p-2 bd-highlight container-sm">
-            <img src="{{url('/images/'.$product->img_path)}}" class="rounded" height="275px">
+        <div class="d-flex p-2 bd-highlight container-sm" id="barang">
+            <img src="{{url('/images/'.$product->img_path)}}" class="rounded" height="275px" width="275px">
+            &emsp;
+            <div class="flex flex-lg-row">
+                <form action="" method="GET">
+                    <h3 class="card-title">{{$product->Nama}}</h3>
+                    <br>
+                    <div class="p-3 mb-2 bg-light text-warning"><h4>Rp {{$product->Harga}},00</h4></div>
+                    <input type="number" class="form-control" value="1" min="1"><small>Tersisa {{$product->Harga}} buah</small>
+                    <br>
+                    <br>
+                    <button type="submit" class="p-2 btn btn-success">Pesan Sekarang</button>
+                </form>
+            </div>
+        </div>
+        <br>
+        <div class="d-flex p-2 bd-highlight container-sm" id="barang">
+            <img src="{{url('/images/'.$product->img_path)}}" class="rounded-circle" height="100px" width="100px">
             &emsp;
             <div class="flex flex-lg-row">
                 <h3 class="card-title">{{$product->Nama}}</h3>
                 <br>
-                <div class="p-3 mb-2 bg-light text-warning"><h4>Rp {{$product->Harga}},00</h4></div>
-                <input type="number" class="form-control" value="1" min="1"><small>Tersisa {{$product->Harga}} buah</small>
-                <br>
-                <br>
-                <button type="button" class="btn btn-success">Success</button>
+                
             </div>
         </div>
+        <br>
+        <div class="d-flex p-2 bd-highlight container-sm" id="barang">
+            <div class="flex flex-lg-row">
+                <h4 class="card-title">Deskripsi Produk</h4>
+                <p>{{$product->Deskripsi}}</p>
+                <br>
+                
+            </div>
+        </div>
+        <br>
     </body>
 </html>
