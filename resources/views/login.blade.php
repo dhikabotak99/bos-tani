@@ -35,21 +35,17 @@
             </div>
         </nav>
     </header>
-    <?php
-    if (isset($_GET['alert'])) {
-    ?>
-        <div class="alert alert-warning" role="alert"> Logout! </div>
 
-    <?php } ?>
     <br>
     <br>
     <br>
     <div class="container mt-3 d-flex justify-content-center">
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="/postLogin" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
+                            {{csrf_field()}}
                             <h1 class="mt-4 text-center">Login</h1><br>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">E-mail</label>
@@ -57,7 +53,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" name="pass" required size="43px">
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="password" required size="43px">
                             </div>
                             <div class="form-group form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember">

@@ -41,7 +41,8 @@
         <br>
         
     <div class="container mt-3 d-flex justify-content-center">
-        <form action="RegisterEvent.php" method="post" enctype="multipart/form-data">
+        <form action="/formRegister" method="post" enctype="multipart/form-data">
+        {{csrf_field()}}
             <div class="row">
                 <div class="col">
                     <div class="card">
@@ -61,7 +62,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" name="pass" required size="43px">
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="password" required size="43px">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Confirm Password</label>

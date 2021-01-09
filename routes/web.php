@@ -30,6 +30,8 @@ use App\Http\Controllers\orderController;
 Route::get('/order', [orderController::class, 'index']);
 Route::get('/order-product/{id}', [orderController::class, 'order']);
 
-use App\Http\Controllers\userController;
-Route::get('/login', [userController::class, 'login']);
-Route::get('/register', [userController::class, 'register']);
+use App\Http\Controllers\authController;
+Route::get('/login', [authController::class, 'login']);
+Route::post('/postLogin', [authController::class, 'postLogin']);
+Route::get('/register', [authController::class, 'register']);
+Route::post('/formRegister', [authController::class, 'formRegister']);
