@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Http\Models;
-use App\Http\Models\User;
+use App\Models\User;
 
 class authController extends Controller
 {
@@ -21,7 +21,10 @@ class authController extends Controller
     }
 
     public function register(){
-        return view('register');
+        $user =  User::all();
+
+        return view('register', ['user' => $user]);
+        // return view('register');
     }
 
     public function formRegister(Request $request){
