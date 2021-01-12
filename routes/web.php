@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('index');
-// });
+Route::get('/sayur', function () {
+    return view('dashboard-admin/home');
+});
 
 use App\Http\Controllers\productController;
 Route::get('/', [productController::class, 'index']);

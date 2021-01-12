@@ -60,7 +60,7 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="/images/tomat.jpg" class="d-block" height="465px" width="1349px">
+                    <a href="/product"><img src="/images/tomat.jpg" class="d-block" height="465px" width="1349px"></a>
                 </div>
                 <div class="carousel-item">
                     <img src="/images/brokoli.jpg" class="d-block" height="465px" width="1349px">

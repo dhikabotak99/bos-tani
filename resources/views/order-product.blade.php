@@ -57,7 +57,7 @@
                     <h3 class="card-title">{{$product->Nama}}</h3>
                     <br>
                     <div class="p-3 mb-2 bg-light text-warning"><h4>Rp {{$product->Harga}},00</h4></div>
-                    <input type="number" class="form-control" value="1" min="1"><small>Tersisa {{$product->Harga}} buah</small>
+                    <input type="number" class="form-control" value="1" min="1"><small>Tersisa {{$product->Stock}} buah</small>
                     <br>
                     <br>
                     <button type="submit" class="p-2 btn btn-success">Pesan Sekarang</button>

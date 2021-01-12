@@ -20,6 +20,11 @@ class authController extends Controller
         return redirect('/login');
     }
 
+    public function logout(){
+        Auth::logout();
+        return view('login');
+    }
+
     public function register(){
         $user =  User::all();
 
