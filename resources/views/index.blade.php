@@ -30,7 +30,20 @@
                             </li>
                         </ul>
                     </div>
-                    <a href="login" class="btn btn-outline-success" type="submit">Login</a>
+                    @if(Auth::guest())
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{$user->Nama}}
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                    @else
+                        <a href="login" class="btn btn-outline-success" type="submit">Login</a>
+                    @endif
                 </div>
             </nav>
         </header>

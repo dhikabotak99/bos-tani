@@ -41,7 +41,7 @@
 <div class="container position-relative my-5">
 <h4 style="text-align: center;">ADMIN DASHBOARD</h4>
     <div class="row position-relative">
-    @foreach ($product as $procat )     
+    @foreach ($products as $procat )     
     <div class="row row-cols-1 row-cols-md-2 g-4">
 </div>   
       <div class="col-md-4">
