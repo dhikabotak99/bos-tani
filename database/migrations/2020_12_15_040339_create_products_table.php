@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->integer('Harga');
             $table->string('Asal');
             $table->text('Deskripsi');
+            $table->integer('Stock');
             $table->string('img_path');
         });
     }

@@ -21,6 +21,7 @@ class productSeeder extends Seeder
                 'Harga'=>'20000',
                 'Asal'=> 'asdasf',
                 'Deskripsi'=> 'asdasfasfasf',
+                'Stock'=> '100',
                 'img_path'=> 'sawi.jpg'
             ]);
         }

@@ -32,6 +32,7 @@ class authController extends Controller
         $users->name = $request->name;
         $users->email = $request->email;
         $users->password = bcrypt($request->passowrd);
+        $users->phone = $request->phone;
         $users->save();
 
         return redirect('/login');
