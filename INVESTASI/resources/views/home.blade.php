@@ -43,17 +43,17 @@
 <div class="container position-relative my-5">
 <h4 style="text-align: center;">ADMIN DASHBOARD</h4>
     <div class="row position-relative">
-    @foreach ($product as $procat )     
+    @foreach ($products as $p )     
     <div class="row row-cols-1 row-cols-md-2 g-4">
 </div>   
       <div class="col-md-4">
           <a href="" class="text-dark">
           <div class="card border-0 my-2 card-blog position-relative">
-            <img class="card-img-top" src="sayur.jpg"<?= $procat['img_path'] ?> alt="">
+            <img class="card-img-top" src="sayur.jpg"<?= $p['img_path'] ?> alt="">
           </div>
 
           <div class="card-body">
-              <h5 class="card-title poppins mb-1 font-weight-bold"><?= $procat['name'] ?></h5>
+              <h5 class="card-title poppins mb-1 font-weight-bold"><?= $p['name'] ?></h5>
             </div>
             </a>
         </div> 

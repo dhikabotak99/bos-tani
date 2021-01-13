@@ -14,8 +14,11 @@ class authController extends Controller
     }
 
     public function postLogin(Request $request){
-        if(Auth::attempt($request->only('email','password'))){
-            return redirect('/');
+        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+            if(Auth::user($user->Role='ROLEAD')){
+                return redirect('/dashboard-admin', ['user' => $user]);
+            }
+            return redirect('/', ['user' => $user]);
         }
         return redirect('/');
     }

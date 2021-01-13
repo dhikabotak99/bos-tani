@@ -47,7 +47,7 @@
       <div class="col-md-4">
           <a href="" class="text-dark">
           <div class="card border-0 my-2 card-blog position-relative">
-            <img class="card-img-top" src="/images/sayur.jpg"<?= $procat['img_path'] ?> alt="">
+            <img class="card-img-top" src="/images/sayur.jpg" alt="">
           </div>
 
           <div class="card-body">

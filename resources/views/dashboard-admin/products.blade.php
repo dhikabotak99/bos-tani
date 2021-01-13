@@ -43,7 +43,7 @@
           <div class="box">
           <h4 style="text-align: center;">LIST PENJUALAN</h4>
           <h6 style="text-align: Left;"> Silahkan Masukkan Hasil Panen Yang Ingin Kamu Jual: </h6>
-            <a href="addProduct" class="btn btn-#2F4F4F btn-sm"><i class="fa fa-plus"></i> Tambah</a>
+            <a href="add-product" class="btn btn-#2F4F4F btn-sm"><i class="fa fa-plus"></i> Tambah</a>
             <br />
             <br>
 
@@ -61,11 +61,11 @@
                 <?php 
                   $no = 1;
                  ?>
-                @foreach($product as $p )
+                @foreach($products as $p )
                
                 <tr>
                   <td>{{$no++}}</td>
-                  <td>{{$p->name}}</td>
+                  <td>{{$p->Nama}}</td>
                   <td>${{$p->price}}.00</td>
                   <td style="text-align: center;">
                   <a class='btn btn-info btn-xs' href="{{url('product/edit')}}/{{$p->id}}" class=""> Edit<i class="glyphicon glyphicon-edit"></i> </a> &nbsp;&nbsp;
