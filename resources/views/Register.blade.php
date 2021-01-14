@@ -39,6 +39,7 @@
     <?php } ?>
         <br>
         <br>
+        <br>
         
     <div class="container mt-3 d-flex justify-content-center">
         <form action="/formRegister" method="post" enctype="multipart/form-data">

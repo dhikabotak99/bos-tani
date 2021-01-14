@@ -73,13 +73,13 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <a href="/product"><img src="/images/tomat.jpg" class="d-block" height="465px" width="1349px"></a>
+                    <a href="/product"><img src="/images/iklanInvest.png" class="d-block" height="465px" width="1349px"></a>
                 </div>
                 <div class="carousel-item">
-                    <img src="/images/brokoli.jpg" class="d-block" height="465px" width="1349px">
+                    <img src="/images/TambahIklan.png" class="d-block" height="465px" width="1349px">
                 </div>
                 <div class="carousel-item">
-                    <img src="/images/bayam.jpg" class="d-block" height="465px" width="1349px">
+                    <img src="/images/TambahIklan.png" class="d-block" height="465px" width="1349px">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleDark" role="button" data-bs-slide="prev">

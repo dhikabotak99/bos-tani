@@ -66,10 +66,10 @@
         </div>
         <br>
         <div class="d-flex p-2 bd-highlight container-sm" id="barang">
-            <img src="{{url('/images/'.$product->img_path)}}" class="rounded-circle" height="100px" width="100px">
+            <img src="{{url('/images/indomart.jpg')}}" class="rounded-circle" height="100px" width="100px">
             &emsp;
             <div class="flex flex-lg-row">
-                <h3 class="card-title">{{$product->Nama}}</h3>
+                <h3 class="card-title">Sumedang Maju</h3>
                 <br>
                 
             </div>

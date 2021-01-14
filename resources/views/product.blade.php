@@ -60,7 +60,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{$p->Nama}}</h5>
                     <p class="card-text">{{$p->Deskripsi}}</p>
-                    <h3 class="card-title">${{$p->Harga}}.00</h3>
+                    <h3 class="card-title">Rp{{$p->Harga}}.00</h3>
                     <a href="{{url('/order-product/'.$p->id)}}" class="btn btn-success">Order Now</a>
                 </div>
             </div>

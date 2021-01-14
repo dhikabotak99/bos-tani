@@ -60,10 +60,10 @@
                 <img src="{{url('/images/'.$i->img_path)}}" class="card-img-top" height="262px" width="262px">
                 <div class="card-body">
                     <h5 class="card-title">{{$i->Nama}}</h5>
-                    <p class="card-text">{{$i->Hasil}}%</p>
-                    <p class="card-text">{{$i->Periode_Kontrak}}</p>
-                    <p class="card-text">{{$i->Periode_Bagi_hasil}}</p>
-                    <h3 class="card-title">IDR{{$i->Harga}}.00</h3>
+                    <p class="card-text">Hasil: {{$i->Hasil}}%</p>
+                    <p class="card-text">Periode: {{$i->Periode_Kontrak}} Tahun</p>
+                    <p class="card-text">Bagi Hasil:{{$i->Periode_Bagi_hasil}} Tahun</p>
+                    <h3 class="card-title">IDR{{$i->Harga}}000.00</h3>
                     <a href="{{url('/order-product/'.$i->id)}}" class="btn btn-success">Order Now</a>
                 </div>
             </div>

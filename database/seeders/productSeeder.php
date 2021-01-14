@@ -17,10 +17,10 @@ class productSeeder extends Seeder
     {
         foreach(range(1,25) as $index){
             DB::table('products')->insert([
-                'Nama'=> 'asd',
+                'Nama'=> 'Sawi',
                 'Harga'=>'20000',
-                'Asal'=> 'asdasf',
-                'Deskripsi'=> 'asdasfasfasf',
+                'Asal'=> 'Sumedang',
+                'Deskripsi'=> 'Sawi terbaik asal Sumedang, dengan pemeliharaan yang terbaik.',
                 'Stock'=> '100',
                 'img_path'=> 'sawi.jpg'
             ]);
