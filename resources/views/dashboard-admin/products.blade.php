@@ -30,7 +30,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="home">HOME <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="dashboard-admin">HOME <span class="sr-only">(current)</span></a>
         </li>
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
@@ -43,23 +43,22 @@
             </ul>
           </li>
         </ul>
-        <li>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Investasi
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
               <li><a class="dropdown-item" href="/products">List Products</a></li>
               <li><a class="dropdown-item" href="/history">History</a></li>
             </ul>
-          </div>
-        </li>
+        </ul>
+
         <li class="nav-item">
-          <a class="nav-link" href="order">PENJUALAN</a>
+          <a class="nav-link" href="order">Penjualan</a>
         </li>    
-        <li class="nav-item">
-          <a class="nav-link" href="history">HISTORY</a>
-        </li>
+      </ul>
       </ul>
    </div>
 </nav>
