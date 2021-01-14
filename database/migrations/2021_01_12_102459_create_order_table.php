@@ -19,6 +19,7 @@ class CreateOrderTable extends Migration
             $table->biginteger("product_id");
             $table->integer("jumlah");
             $table->integer("total_harga");
+            $table->string("status");
             $table->timestamps();
         });
     }
