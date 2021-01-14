@@ -39,9 +39,18 @@
                             </li>
                         </ul>
                     </div>
-                    <form action="/login" class="d-flex">
-                        <button class="btn btn-outline-success" type="submit">Login</button>
-                    </form>
+                    @if(Auth::guest())
+                        <a href="login" class="btn btn-outline-success" type="submit">Login</a>
+                    @else
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{Auth::user()->name ?? ''}}
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                            </ul>
+                        </div>
+                    @endif
                 </div>
             </nav>
         </header>
@@ -57,7 +66,7 @@
                     <h3 class="card-title">{{$product->Nama}}</h3>
                     <br>
                     <div class="p-3 mb-2 bg-light text-warning"><h4>Rp {{$product->Harga}},00</h4></div>
-                    <input type="number" class="form-control" value="1" min="1"><small>Tersisa {{$product->Stock}} buah</small>
+                    <input type="number" class="form-control" name="jmulah" value="1" min="1"><small>Tersisa {{$product->Stock}} buah</small>
                     <br>
                     <br>
                     <button type="submit" class="p-2 btn btn-success">Pesan Sekarang</button>

@@ -15,12 +15,12 @@ class authController extends Controller
 
     public function postLogin(Request $request){
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
-            if(Auth::user($user->Role='ROLEAD')){
-                return redirect('/dashboard-admin', ['user' => $user]);
+            if(Auth::user()->role=='ROLEPJ'){
+                return redirect('/dashboard-admin');
             }
-            return redirect('/', ['user' => $user]);
+            return redirect('/');
         }
-        return redirect('/');
+        return redirect('/login');
     }
 
     public function logout(){
@@ -39,7 +39,7 @@ class authController extends Controller
         $users = new User;
         $users->name = $request->name;
         $users->email = $request->email;
-        $users->password = bcrypt($request->passowrd);
+        $users->password = bcrypt($request->password);
         $users->phone = $request->phone;
         $users->save();
 
