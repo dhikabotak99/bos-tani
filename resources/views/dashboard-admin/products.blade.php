@@ -38,7 +38,7 @@
               Products
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-              <li><a class="dropdown-item" href="/products">List Products</a></li>
+              <li><a class="dropdown-item" href="/products">List Produk</a></li>
               <li><a class="dropdown-item" href="/history">History</a></li>
             </ul>
           </li>
@@ -50,7 +50,7 @@
               Investasi
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-              <li><a class="dropdown-item" href="/products">List Products</a></li>
+            <li><a class="dropdown-item" href="/products">List Investasi</a></li>
               <li><a class="dropdown-item" href="/history">History</a></li>
             </ul>
         </ul>
