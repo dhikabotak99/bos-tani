@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\product;
+use App\Models\investasi;
 
 class productController extends Controller
 {
     public function index(){
         $product =  product::all();
+        $investasi =  investasi::all();
         
 
-        return view('index', ['product' => $product]);
+        return view('index', ['product' => $product], ['investasi' => $investasi]);
     }
 
     public function allProduct(){

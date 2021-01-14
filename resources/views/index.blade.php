@@ -92,6 +92,7 @@
             </a>
         </div>
         <br>
+        <h2>Product</h2>
         @if(count($product)>0)
         <div class="row g-3 d-flex justify-content-center">
             @foreach($product as $index=>$p)
@@ -100,7 +101,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{$p->Nama}}</h5>
                     <p class="card-text">{{$p->Deskripsi}}</p>
-                    <h3 class="card-title">${{$p->Harga}}.00</h3>
+                    <h3 class="card-title">Rp{{$p->Harga}}.00</h3>
                     <a href="{{url('/order-product/'.$p->id)}}" class="btn btn-success">Order Now</a>
                 </div>
             </div>
@@ -110,6 +111,34 @@
                 @endif
             @endforeach
             
+        </div>
+        @else
+        <center>
+            <p>There is no product...</p>
+        </center>
+        @endif
+        <br>
+        <br>
+        <h2>Investasi</h2>
+        @if(count($investasi)>0)
+        <div class="row g-3 d-flex justify-content-center">
+            @foreach($investasi as $index=>$i)
+            <div class="card" style="width: 18rem;">
+                <img src="{{url('/images/'.$i->img_path)}}" class="card-img-top" height="262px" width="262px">
+                <div class="card-body">
+                    <h5 class="card-title">{{$i->Nama}}</h5>
+                    <p class="card-text">Hasil: {{$i->Hasil}}%</p>
+                    <p class="card-text">Periode: {{$i->Periode_Kontrak}} Tahun</p>
+                    <p class="card-text">Bagi Hasil:{{$i->Periode_Bagi_hasil}} Tahun</p>
+                    <h3 class="card-title">Rp{{$i->Harga}}000.00</h3>
+                    <a href="{{url('/order-product/'.$i->id)}}" class="btn btn-success">Order Now</a>
+                </div>
+            </div>
+            &nbsp;&nbsp;
+            @if ($index == 7)
+                    @break
+                @endif
+            @endforeach
         </div>
         @else
         <center>
