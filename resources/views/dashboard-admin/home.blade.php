@@ -5,7 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> HOME </title>
-  @include('layouts.css')
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel-rtl/">
+
+  <style>
+      body {
+          background-color: rgb(217, 217, 211);
+      }
+      #barang {
+          background-color: white;
+      }
+  </style>
 </head>
 
 <body>
@@ -33,6 +45,15 @@
         <li class="nav-item">
           <a class="nav-link" href="history">HISTORY</a>
         </li>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              Products
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="#">List Products</a></li>
+              <li><a class="dropdown-item" href="#">History</a></li>
+            </ul>
+          </div>
       </ul>
    </div>
 </nav>
@@ -61,5 +82,4 @@
   
 
 </body>
-@include('layouts.js') 
 </html>

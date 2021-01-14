@@ -11,6 +11,6 @@ class order extends Model
         return $this->hasOne('App\Models\Product', 'foreign-key');
     }
 
-    protected $table = 'orders';
+    protected $table = 'order';
     use HasFactory;
 }

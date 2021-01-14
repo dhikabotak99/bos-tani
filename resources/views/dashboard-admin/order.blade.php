@@ -5,6 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Barang Penjualan </title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel-rtl/">
+
+  <style>
+      body {
+          background-color: rgb(217, 217, 211);
+      }
+      #barang {
+          background-color: white;
+      }
+  </style>
   @include('layouts.css')
 </head>
 
@@ -37,7 +49,7 @@
 <div class="container position-relative my-5">
 <h4 style="text-align: center;">PENJUALAN</h4>
     <div class="row position-relative">
-    @foreach ($product as $procat )         
+    @foreach ($products as $procat )         
       <div class="col-md-4">
           <a href="" class="text-dark">
           <div class="card border-0 my-2 card-blog position-relative">

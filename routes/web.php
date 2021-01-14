@@ -45,3 +45,5 @@ Route::get('/update-product', [adminController::class, 'updateProduct']);
 Route::get('/order', [adminController::class, 'order']);
 Route::get('/history', [adminController::class, 'history']);
 Route::get('/detail-order', [adminController::class, 'detailOrder']);
+Route::get('/konfirm/{id}', [adminController::class, 'konfirm']);
+Route::get('/delete/{id}', [adminController::class, 'delete']);

@@ -5,6 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UPDATE PRODUCT </title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel-rtl/">
+
+  <style>
+      body {
+          background-color: rgb(217, 217, 211);
+      }
+      #barang {
+          background-color: white;
+      }
+  </style>
   @include('layouts.css')
 </head>
 
@@ -22,9 +34,15 @@
           <a class="nav-link" href="home">HOME <span class="sr-only">(current)</span></a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="product">PRODUCT</a>
-        </li>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            Products
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#">List Products</a></li>
+            <li><a class="dropdown-item" href="#">History</a></li>
+          </ul>
+        </div>
 
         <li class="nav-item active">
           <a class="nav-link" href="order">ORDER</a>
@@ -49,28 +67,28 @@
             
           
             <form id="form" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="" enctype="multipart/form-data" method="POST" 
-            action="{{url('updateproduct', $product->id)}}">
+            action="{{url('updateproduct', $products->id)}}">
              @csrf
 
               <div class="box-body">
                 <div class="form-group">
                 <label for="name">Product Name</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{$product->name}}" placeholder="Product Name">
+                <input type="text" class="form-control" id="name" name="name" value="{{$products->name}}" placeholder="Product Name">
                 </div>
 
                 <div class="form-group">
                 <label for="price">Price</label>
-                <input type="number" class="form-control" name="price" id="price" value="{{$product->price}}" placeholder="Price">
+                <input type="number" class="form-control" name="price" id="price" value="{{$products->price}}" placeholder="Price">
                 </div>
 
                 <div class="form-group">
                 <label>Description</label>
-                <textarea class="form-control" rows="3" name="description" placeholder="Description">{{$product->description}}</textarea>
+                <textarea class="form-control" rows="3" name="description" placeholder="Description">{{$products->description}}</textarea>
                 </div>
 
                 <div class="form-group">
                 <label for="stock">Stock</label>
-                <input type="number" class="form-control" id="stock" name="stock" value="{{$product->stock}}" placeholder="Stock">
+                <input type="number" class="form-control" id="stock" name="stock" value="{{$products->stock}}" placeholder="Stock">
                 </div>
 
                 <div class="form-group">

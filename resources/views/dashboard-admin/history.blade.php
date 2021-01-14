@@ -5,6 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> HISTORY </title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel-rtl/">
+
+  <style>
+      body {
+          background-color: rgb(217, 217, 211);
+      }
+      #barang {
+          background-color: white;
+      }
+  </style>
   @include('layouts.css')
 </head>
 
@@ -49,24 +61,28 @@
                 <thead>
                 <tr>
                   <th style="background-color:#2F4F4F;color:#fff;">No</th>
-                  <th style="background-color:#2F4F4F;color:#fff;" width="300px">Product</th>
-                  <th style="background-color:#2F4F4F;color:#fff;">Buyer Name</th>
-                  <th style="background-color:#2F4F4F;color:#fff;">Buyer Contact</th>
-                  <th style="background-color:#2F4F4F;color:#fff;">Amount</th>
+                  <th style="background-color:#2F4F4F;color:#fff;" width="300px">Nama Pembeli</th>
+                  <th style="background-color:#2F4F4F;color:#fff;">Nama Barang</th>
+                  <th style="background-color:#2F4F4F;color:#fff;">Jumlah Barang</th>
+                  <th style="background-color:#2F4F4F;color:#fff;">Total Harga</th>
+                  <th style="background-color:#2F4F4F;color:#fff;">Status</th>
+                  <th style="background-color:#2F4F4F;color:#fff;">Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php 
-                  $no = 1;
-                 ?>
-                @foreach($history_data as $h )
+                @foreach($orders as $index=>$o )
                
                 <tr>
-                  <td>{{$no++}}</td>
-                  <td>{{$h->name}}</td>
-                  <td>{{$h->buyer_name}}</td>
-                  <td>{{$h->buyer_contact}}</td>
-                  <td>${{$h->amount}}.00</td>
+                  <td>{{$index+1}}</td>
+                  <td>asd</td>
+                  <td>asd</td>
+                  <td>{{$o->jumlah}}</td>
+                  <td>${{$o->total_harga}}.00</td>
+                  <td>{{$o->status}}</td>
+                  <td>
+                  <a href="{{url('/konfirm/'.$o->id)}}"><button type="button" class="btn btn-success">Konfirmasi</button></a>
+                  <a href="{{url('/delete/'.$o->id)}}"><button type="button" class="btn btn-danger">Tolak</button></a>
+                  </td>
                 </tr>    
                 @endforeach
                 </tbody>
