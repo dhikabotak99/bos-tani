@@ -22,6 +22,7 @@ class CreateInvestasiTable extends Migration
             $table->integer('Periode_Bagi_hasil');
             $table->integer('Unit_Tersisa');
             $table->string('img_path');
+            $table->timestamps();
         });
     }
 

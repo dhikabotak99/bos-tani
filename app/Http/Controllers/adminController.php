@@ -7,6 +7,7 @@ use App\Models\product;
 use App\Models\order;
 use Auth;
 use DB;
+use App\Models\investasi;
 
 class adminController extends Controller
 {
@@ -84,6 +85,82 @@ class adminController extends Controller
 
         return redirect('products');
     }
+
+    
+
+    public function investasis(){
+        $investasi =  investasi::all();
+        
+        return view('/dashboard-admin/investasis', ['investasi' => $investasi]);
+    }
+
+    public function addInvestasi(){
+        $investasi =  investasi::all();
+        
+        return view('/dashboard-admin/addinvestasi', ['investasi' => $investasi]);
+    }
+
+    public function postAddInvestasi(Request $request){
+        $investasi = new investasi;
+        $investasi->Nama = $request->name;
+        $investasi->Harga = $request->price;
+        $investasi->Periode_Kontrak = $request->kontrak;
+        $investasi->Hasil = $request->hasil;
+        $investasi->Periode_Bagi_Hasil = $request->bagi;
+        $investasi->Unit_Tersisa = $request->unit;
+        if($request->hasFile('image')){
+            $resorce       = $request->file('image');
+            $name   = $resorce->getClientOriginalName();
+            $resorce->move(\base_path() ."/public/images", $name);
+            $investasi->img_path = $name;
+            echo "Gambar berhasil di upload";
+        }else{
+            echo "Gagal upload gambar";
+        }
+        $investasi->save();
+
+        return redirect('investasis');
+    }  
+
+    public function updateInvestasi($id){
+        $investasi =  investasi::find($id);
+        
+        return view('/dashboard-admin/updateinvestasi', ['investasi' => $investasi]);
+    }
+
+    public function postupdateInvestasi($id, Request $request){
+        $investasi = investasi::find($id);
+        $investasi->Nama = $request->name;
+        $investasi->Harga = $request->price;
+        $investasi->Periode_Kontrak = $request->kontrak;
+        $investasi->Hasil = $request->hasil;
+        $investasi->Periode_Bagi_Hasil = $request->bagi;
+        $investasi->Unit_Tersisa = $request->unit;
+        if($request->hasFile('image')){
+            $resorce       = $request->file('image');
+            $name   = $resorce->getClientOriginalName();
+            $resorce->move(\base_path() ."/public/images", $name);
+            $investasi->img_path = $name;
+            echo "Gambar berhasil di upload";
+        }else{
+            echo "Gagal upload gambar";
+        }
+        $investasi->save();
+
+        return redirect('investasis');
+
+        $investasi =  investasi::all();
+        return redirect('investasis');
+    }  
+
+    public function deleteInvestasi($id){
+        $investasi =  investasi::find($id);
+
+        $investasi->delete();
+
+        return redirect('investasis');
+    }
+
     
     public function order(){
         $products =  product::all();
