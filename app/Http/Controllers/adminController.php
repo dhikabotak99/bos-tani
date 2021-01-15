@@ -25,6 +25,27 @@ class adminController extends Controller
         
         return view('/dashboard-admin/addproduct', ['products' => $products]);
     }
+    public function postAddProduct(Request $request){
+        $products = new product;
+        $products->Nama = $request->name;
+        $products->Harga = $request->price;
+        $products->Asal = $request->asal;
+        $products->Deskripsi = $request->description;
+        $products->Stock = $request->stock;
+        if($request->hasFile('image')){
+            $resorce       = $request->file('image');
+            $name   = $resorce->getClientOriginalName();
+            $resorce->move(\base_path() ."/public/images", $name);
+            $products->img_path = $name;
+            echo "Gambar berhasil di upload";
+        }else{
+            echo "Gagal upload gambar";
+        }
+        $products->save();
+
+        return redirect('products');
+    }  
+    
 
     public function updateProduct($id){
         $products =  product::find($id);

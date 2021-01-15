@@ -42,6 +42,7 @@ use App\Http\Controllers\adminController;
 Route::get('/dashboard-admin', [adminController::class, 'index']);
 Route::get('/products ', [adminController::class, 'products']);
 Route::get('/add-product', [adminController::class, 'addProduct']);
+Route::POST('/post-add-product', [adminController::class, 'postAddProduct']);
 Route::get('/update-product/{id}', [adminController::class, 'updateProduct']);
 Route::POST('/post-update-product/{id}', [adminController::class, 'postUpdateProduct']);
 Route::get('/order', [adminController::class, 'order']);

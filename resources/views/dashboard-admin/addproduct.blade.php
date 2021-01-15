@@ -74,7 +74,7 @@
             <h4 style="text-align: center;">INPUT PRODUK</h4>
             </div>
            
-            <form id="form" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="" enctype="multipart/form-data" method="POST" action="{{url('product/save')}}">
+            <form id="form" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="" enctype="multipart/form-data" method="POST" action="/post-add-product">
              @csrf
               <div class="box-body">
                 <div class="form-group">
@@ -87,6 +87,10 @@
                 <input type="number" class="form-control" name="price" id="price" placeholder="Price">
                 </div>
 
+                <div class="form-group">
+                <label for="asal">asal</label>
+                <input type="text" class="form-control" name="asal" id="asal" placeholder="asal">
+                </div>
               
                 <div class="form-group">
                 <label>Deskripsi Barang</label>
@@ -99,11 +103,9 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Masukkan Foto</label>
-                  <div class="col-md-6 col-sm-6 ">
-                  <input type="file" name="img_path" id="img_path" onchange="fileSelected();"/>
-                  </div>
-                </div>
+                  <label for="image-input">Masukan Gambar</label>
+                  <input type="file" class="form-control-file" name="image">
+                </div>  
               </div>
         
 
