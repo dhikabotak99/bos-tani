@@ -62,11 +62,14 @@
             <img src="{{url('/images/'.$product->img_path)}}" class="rounded" height="275px" width="275px">
             &emsp;
             <div class="flex flex-lg-row">
-                <form action="" method="GET">
+                <form action="/postOrder" method="GET">
+                <h1 style="display: none;">asd</h1>
+                    <input type="hidden" name="idProduct" value="{{$product->id}}">
                     <h3 class="card-title">{{$product->Nama}}</h3>
                     <br>
                     <div class="p-3 mb-2 bg-light text-warning"><h4>Rp {{$product->Harga}},00</h4></div>
-                    <input type="number" class="form-control" name="jmulah" value="1" min="1"><small>Tersisa {{$product->Stock}} buah</small>
+                    <input type="hidden" name="Harga" value="{{$product->Harga}}">
+                    <input type="number" class="form-control" name="jumlah" value="1" min="1"><small>Tersisa {{$product->Stock}} buah</small>
                     <br>
                     <br>
                     <button type="submit" class="p-2 btn btn-success">Pesan Sekarang</button>

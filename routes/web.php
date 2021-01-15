@@ -27,8 +27,9 @@ use App\Http\Controllers\investasiController;
 Route::get('/investasi', [investasiController::class, 'index']);
 
 use App\Http\Controllers\orderController;
-Route::get('/order', [orderController::class, 'index']);
+// Route::get('/order', [orderController::class, 'index']);
 Route::get('/order-product/{id}', [orderController::class, 'order']);
+Route::get('/postOrder', [orderController::class, 'postOrder']);
 
 use App\Http\Controllers\authController;
 Route::get('/login', [authController::class, 'login']);
@@ -46,5 +47,5 @@ Route::POST('/post-update-product/{id}', [adminController::class, 'postUpdatePro
 Route::get('/order', [adminController::class, 'order']);
 Route::get('/history', [adminController::class, 'history']);
 Route::get('/detail-order', [adminController::class, 'detailOrder']);
-Route::POST('/konfirm/{id}', [adminController::class, 'konfirm']);
+Route::get('/konfirm/{id}', [adminController::class, 'konfirm']);
 Route::get('/delete/{id}', [adminController::class, 'delete']);
