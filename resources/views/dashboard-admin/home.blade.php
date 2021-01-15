@@ -56,10 +56,7 @@
             </ul>
           </li>
         </ul>
-
-        <li class="nav-item">
-          <a class="nav-link" href="order">Penjualan</a>
-        </li>    
+    
       </ul>
       </ul>
    </div>
@@ -75,7 +72,7 @@
 </header> 
 
 <div class="container position-relative my-5">
-<h4 style="text-align: center;">ADMIN DASHBOARD</h4>
+<h2 style="text-align: center;">ADMIN DASHBOARD</h2>
     <div class="row position-relative">
     @foreach ($products as $procat )     
     <div class="row row-cols-1 row-cols-md-2 g-4">

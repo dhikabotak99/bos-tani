@@ -57,9 +57,6 @@
           </li>
         </ul>
 
-        <li class="nav-item">
-          <a class="nav-link" href="order">Penjualan</a>
-        </li>    
       </ul>
       </ul>
    </div>

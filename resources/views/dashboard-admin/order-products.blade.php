@@ -56,12 +56,8 @@
             </ul>
           </li>
         </ul>
-
-        <li class="nav-item">
-          <a class="nav-link" href="order">Penjualan</a>
-        </li>    
       </ul>
-      </ul>
+      
    </div>
    <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
