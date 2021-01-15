@@ -61,6 +61,14 @@
       </ul>
       </ul>
    </div>
+   <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+        {{Auth::user()->name ?? ''}}
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="/logout">Logout</a></li>
+    </ul>
+  </div>
 </nav>
 </header>
 
@@ -101,7 +109,7 @@
                   <td>{{$p->Stock}}</td>
                   <td style="text-align: center;">
                     <a class='btn btn-info btn-xs' href="{{url('update-product')}}/{{$p->id}}" class=""> Edit<i class="glyphicon glyphicon-edit"></i> </a> &nbsp;&nbsp;
-                    <a class='btn btn-danger btn-xs' href="{{url('product/delete')}}/{{$p->id}}" class=""> Delete<i class="glyphicon glyphicon-edit"></i> </a> 
+                    <a class='btn btn-danger btn-xs' href="{{url('/deleteProduct/'.$p->id)}}" class=""> Delete<i class="glyphicon glyphicon-edit"></i> </a> 
                   </td>
                 </tr>    
                 @endforeach

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\product;
 use App\Models\order;
+use Auth;
+use DB;
 
 class adminController extends Controller
 {
@@ -75,6 +77,14 @@ class adminController extends Controller
         return redirect('products');
     }
 
+    public function deleteProduct($id){
+        $products = product::find($id);
+
+        $products->delete();
+
+        return redirect('products');
+    }
+    
     public function order(){
         $products =  product::all();
         
@@ -83,9 +93,13 @@ class adminController extends Controller
 
     public function history(){
         $products =  product::all();
-        $orders =  order::all();
-        
-        return view('/dashboard-admin/history-products', ['products' => $products], ['orders' => $orders]);
+        $orders = DB::table('order')
+                    ->join('users', 'users.id', '=', 'order.buyer_id')
+                    ->join('products', 'products.id', '=', 'order.product_id')
+                    ->select('order.id', 'users.name', 'products.Nama', 'order.jumlah', 'order.total_harga', 'order.status')
+                    ->get();
+
+        return view('/dashboard-admin/history-products', ['orders' => $orders]);
     }
 
     public function detailOrder(){
@@ -94,20 +108,20 @@ class adminController extends Controller
         return view('/dashboard-admin/detailorder', ['products' => $products]);
     }
 
-    public function konfirm($id){
-        $orders =  order::find($id);
+    public function konfirmOrder($id){
+        $orders = DB::table('order')
+                    ->select('order.id', 'order.status')
+                    ->where('order.id', '=', $id)
+                    ->update(['order.status' => "Sudah di Konfirmasi"]);
         
-        $orders->status = "Sudah diKonfirmasi";
-        $orders->save();
-
-        return view('/dashboard-admin/history-products');
+        return redirect('history');
     }
 
-    public function delete($id){
-        $orders =  order::find($id);
+    public function deleteOrder($id){
+        $orders = order::find($id);
 
         $orders->delete();
 
-        return view('/dashboard-admin/history-products');
+        return redirect('history');
     }
 }

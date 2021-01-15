@@ -39,6 +39,7 @@
                                 {{Auth::user()->name ?? ''}}
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="/history-pembeli">History</a></li>
                                 <li><a class="dropdown-item" href="/logout">Logout</a></li>
                             </ul>
                         </div>

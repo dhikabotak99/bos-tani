@@ -14,7 +14,7 @@ class CreateInvestasiTable extends Migration
     public function up()
     {
         Schema::create('investasi', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('Nama');
             $table->integer('Harga');
             $table->integer('Periode_Kontrak');

@@ -5,6 +5,7 @@ use Auth;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Order;
+use DB;
 
 class orderController extends Controller
 {
@@ -36,5 +37,18 @@ class orderController extends Controller
         $product->save();
 
         return redirect('/');
+    }
+
+    public function historyPembeli(){
+        $user = Auth::user();
+        $orders = DB::table('order')
+                    ->join('users', 'users.id', '=', 'order.buyer_id')
+                    ->join('products', 'products.id', '=', 'order.product_id')
+                    ->select('users.id', 'products.Nama', 'order.jumlah', 'order.total_harga', 'order.status')
+                    ->where('order.buyer_id', '=', $user->id)
+                    ->get();
+        // $order =  order::All()->where('buyer_id', $user->id);
+        // dd($orders);
+        return view('history-pembeli', compact('orders'));
     }
 }

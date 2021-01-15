@@ -63,6 +63,14 @@
       </ul>
       </ul>
    </div>
+   <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+        {{Auth::user()->name ?? ''}}
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="/logout">Logout</a></li>
+    </ul>
+  </div>
 </nav>
 </header>
 
@@ -94,8 +102,8 @@
                
                 <tr>
                   <td>{{$index+1}}</td>
-                  <td>asd</td>
-                  <td>asd</td>
+                  <td>{{$o->name}}</td>
+                  <td>{{$o->Nama}}</td>
                   <td>{{$o->jumlah}}</td>
                   <td>${{$o->total_harga}}.00</td>
                   <td>{{$o->status}}</td>
