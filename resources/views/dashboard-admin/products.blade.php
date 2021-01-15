@@ -71,9 +71,9 @@
       <div class="row">
         <div class="col-xs-2">
           <div class="box">
-          <h4 style="text-align: center;">LIST PENJUALAN</h4>
+          <h4 style="text-align: center;">LIST PRODUK</h4>
           <h6 style="text-align: Left;"> Silahkan Masukkan Hasil Panen Yang Ingin Kamu Jual: </h6>
-            <a href="add-product" class="btn btn-#2F4F4F btn-sm"><i class="fa fa-plus"></i> Tambah</a>
+            <a href="add-product" class="btn btn-#2F4F4F btn-sm"><button type="button" class="btn btn-primary">Tambah Produk</button></a>
             <br />
             <br>
 
@@ -83,7 +83,8 @@
                 <tr>
                   <th style="background-color:#2F4F4F;color:#fff;">No</th>
                   <th style="background-color:#2F4F4F;color:#fff;" width="300px">Nama</th>
-                  <th style="background-color:#2F4F4F;color:#fff;">Price</th>
+                  <th style="background-color:#2F4F4F;color:#fff;">Harga</th>
+                  <th style="background-color:#2F4F4F;color:#fff;">Stock</th>
                   <th style="background-color:#2F4F4F;color:#fff;">Action</th>
                 </tr>
                 </thead>
@@ -96,10 +97,11 @@
                 <tr>
                   <td>{{$no++}}</td>
                   <td>{{$p->Nama}}</td>
-                  <td>${{$p->price}}.00</td>
+                  <td>Rp{{$p->Harga}}.00</td>
+                  <td>{{$p->Stock}}</td>
                   <td style="text-align: center;">
-                  <a class='btn btn-info btn-xs' href="{{url('product/edit')}}/{{$p->id}}" class=""> Edit<i class="glyphicon glyphicon-edit"></i> </a> &nbsp;&nbsp;
-                  <a class='btn btn-danger btn-xs' href="{{url('product/delete')}}/{{$p->id}}" class=""> Delete<i class="glyphicon glyphicon-edit"></i> </a> 
+                    <a class='btn btn-info btn-xs' href="{{url('update-product')}}/{{$p->id}}" class=""> Edit<i class="glyphicon glyphicon-edit"></i> </a> &nbsp;&nbsp;
+                    <a class='btn btn-danger btn-xs' href="{{url('product/delete')}}/{{$p->id}}" class=""> Delete<i class="glyphicon glyphicon-edit"></i> </a> 
                   </td>
                 </tr>    
                 @endforeach

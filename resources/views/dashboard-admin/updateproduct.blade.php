@@ -75,36 +75,39 @@
             
           
             <form id="form" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="" enctype="multipart/form-data" method="POST" 
-            action="{{url('updateproduct', $products->id)}}">
+            action="{{url('post-update-product', $products->id)}}">
              @csrf
 
               <div class="box-body">
                 <div class="form-group">
-                <label for="name">Product Name</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{$products->name}}" placeholder="Product Name">
+                  <label for="name">Nama Produk</label>
+                  <input type="text" class="form-control" id="name" name="Nama" value="{{$products->Nama}}" placeholder="{{$products->Nama}}">
                 </div>
 
                 <div class="form-group">
-                <label for="price">Price</label>
-                <input type="number" class="form-control" name="price" id="price" value="{{$products->price}}" placeholder="Price">
+                  <label for="price">Harga</label>
+                  <input type="number" class="form-control" name="Harga" id="price" value="{{$products->Harga}}" placeholder="{{$products->Harga}}">
+                </div>
+                
+                <div class="form-group">
+                  <label for="Asal">Asal</label>
+                  <input type="text" class="form-control" name="Asal" id="Asal" value="{{$products->Asal}}" placeholder="{{$products->Asal}}">
                 </div>
 
                 <div class="form-group">
-                <label>Description</label>
-                <textarea class="form-control" rows="3" name="description" placeholder="Description">{{$products->description}}</textarea>
+                  <label>Description</label>
+                  <textarea class="form-control" rows="3" name="Deskripsi" placeholder="Description">{{$products->Deskripsi}}</textarea>
                 </div>
 
                 <div class="form-group">
-                <label for="stock">Stock</label>
-                <input type="number" class="form-control" id="stock" name="stock" value="{{$products->stock}}" placeholder="Stock">
+                  <label for="stock">Stock</label>
+                  <input type="number" class="form-control" id="Stock" name="Stock" value="{{$products->Stock}}" placeholder="{{$products->Stock}}">
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Image File Input</label>
-                  <div class="col-md-6 col-sm-6 ">
-                  <input type="file" name="img_path" id="img_path" onchange="fileSelected();"/>
-                  </div>
-                </div>
+                  <label for="image-input">Image file input</label>
+                  <input type="file" class="form-control-file" name="image" value="{{$products->img_path}}">
+                </div>  
               </div>
 
               <div class="box-footer">

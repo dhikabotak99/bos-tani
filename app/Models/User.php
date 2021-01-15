@@ -9,6 +9,10 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    public function order(){
+        return $this->belongsTo('App\Models\order');
+    }
+
     protected $table = 'users';
     use HasFactory, Notifiable;
 
