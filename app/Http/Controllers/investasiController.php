@@ -65,4 +65,20 @@ class investasiController extends Controller
         return view('history-investasi', compact('orders'));
     }
 
+    public function konfirmOrderInvestasi($id){
+        $orders = DB::table('order_investasi')
+                    ->select('order_investasi.id', 'order_investasi.status')
+                    ->where('order_investasi.id', '=', $id)
+                    ->update(['order_investasi.status' => "Sudah di Konfirmasi"]);
+        
+        return redirect('history');
+    }
+
+    public function deleteOrderInvestasi($id){
+        $order = order_investasi::find($id);
+
+        $order->delete();
+
+        return redirect('history');
+    }
 }

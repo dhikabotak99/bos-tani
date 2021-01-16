@@ -161,6 +161,17 @@ class adminController extends Controller
         return redirect('investasis');
     }
 
+    public function historyOrderInvestasi(){
+        $investasi =  investasi::all();
+        $orders = DB::table('order_investasi')
+                    ->join('users', 'users.id', '=', 'order_investasi.buyer_id')
+                    ->join('investasi', 'investasi.id', '=', 'order_investasi.product_id')
+                    ->select('order_investasi.id', 'users.name', 'investasi.Nama', 'order_investasi.jumlah', 'order_investasi.total_harga', 'order_investasi.status')
+                    ->get();
+
+        return view('/dashboard-admin/history-investasi', ['orders' => $orders]);
+    }
+
     
     public function order(){
         $products =  product::all();

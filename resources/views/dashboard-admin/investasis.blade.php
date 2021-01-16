@@ -50,8 +50,8 @@
               Investasi
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li><a class="dropdown-item" href="/investasis">List Investasi</a></li>
-              <li><a class="dropdown-item" href="/history">History</a></li>
+              <li><a class="dropdown-item" href="/investasis">List Investasi</a></li>
+              <li><a class="dropdown-item" href="/historyOrderInvestasi">History</a></li>
             </ul>
         </ul> 
       </ul>

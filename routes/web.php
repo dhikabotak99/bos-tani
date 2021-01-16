@@ -25,9 +25,11 @@ Route::get('/product', [productController::class, 'allProduct']);
 
 use App\Http\Controllers\investasiController;
 Route::get('/investasi', [investasiController::class, 'index']);
-Route::get('/order-investasi/{id}', [investasiController::class, 'investasi'])->middleware('auth');;
-Route::get('/postInvestasi', [investasiController::class, 'postInvestasi'])->middleware('auth');;
-Route::get('/history-investasi', [investasiController::class, 'historyInvestasi'])->middleware('auth');;
+Route::get('/order-investasi/{id}', [investasiController::class, 'investasi'])->middleware('auth');
+Route::get('/postInvestasi', [investasiController::class, 'postInvestasi'])->middleware('auth');
+Route::get('/history-investasi', [investasiController::class, 'historyInvestasi'])->middleware('auth');
+Route::get('/konfirm-order-investasi/{id}', [investasiController::class, 'konfirmOrderInvestasi']);
+Route::get('/delete-order-investasi/{id}', [investasiController::class, 'deleteOrderInvestasi']);
 
 use App\Http\Controllers\orderController;
 Route::get('/order-product/{id}', [orderController::class, 'order'])->middleware('auth');
@@ -60,3 +62,4 @@ use App\Http\Controllers\adminController;
     Route::get('/update-investasi/{id}', [adminController::class, 'updateInvestasi']);
     Route::POST('/post-update-investasi/{id}', [adminController::class, 'postUpdateInvestasi']);
     Route::get('/deleteInvestasi/{id}', [adminController::class, 'deleteInvestasi']);
+    Route::get('/historyOrderInvestasi', [adminController::class, 'historyOrderInvestasi']);
