@@ -36,7 +36,7 @@ class orderController extends Controller
         $product->Stock = $product->Stock-$order->jumlah;
         $product->save();
 
-        return redirect('/');
+        return redirect('/history-pembeli');
     }
 
     public function historyPembeli(){
