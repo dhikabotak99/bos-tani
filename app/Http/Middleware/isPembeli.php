@@ -22,6 +22,7 @@ class isPembeli
               return redirect('/');
             }
         }
+        
         return $next($request);
     }
 }

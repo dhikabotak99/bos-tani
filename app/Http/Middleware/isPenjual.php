@@ -22,7 +22,6 @@ class isPenjual
               return redirect('/dashboard-admin');
             }
         }
-
         return $next($request);
     }
 }

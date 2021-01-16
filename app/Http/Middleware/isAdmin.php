@@ -16,6 +16,11 @@ class isAdmin
      */
     public function handle(Request $request, Closure $next)
     {
+        if(Auth::check()) {
+            if(Auth::user()->role != 'ROLEAD'){
+              return redirect('/dashboard-admin');
+            }
+        }
         return $next($request);
     }
 }

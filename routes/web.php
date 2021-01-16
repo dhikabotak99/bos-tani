@@ -39,7 +39,7 @@ Route::get('/register', [authController::class, 'register']);
 Route::post('/formRegister', [authController::class, 'formRegister']);
 
 use App\Http\Controllers\adminController;
-Route::middleware('isPenjual')->group(function () {
+Route::middleware('isPenjual')->group(function() {
     Route::get('/dashboard-admin', [adminController::class, 'index']);
     Route::get('/products ', [adminController::class, 'products']);
     Route::get('/add-product', [adminController::class, 'addProduct']);
