@@ -53,11 +53,7 @@
             <li><a class="dropdown-item" href="/investasis">List Investasi</a></li>
               <li><a class="dropdown-item" href="/history">History</a></li>
             </ul>
-        </ul>
-
-        <li class="nav-item">
-          <a class="nav-link" href="order">Penjualan</a>
-        </li>    
+        </ul> 
       </ul>
       </ul>
    </div>
