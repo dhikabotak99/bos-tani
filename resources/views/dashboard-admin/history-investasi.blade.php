@@ -105,8 +105,8 @@
                   <td>${{$o->total_harga}}.00</td>
                   <td>{{$o->status}}</td>
                   <td>
-                    <a href="{{url('/konfirm/'.$o->id)}}"><button type="button" class="btn btn-success">Konfirmasi</button></a>
-                    <a href="{{url('/delete/'.$o->id)}}"><button type="button" class="btn btn-danger">Tolak</button></a>
+                    <a href="{{url('/konfirm-order-investasi/'.$o->id)}}"><button type="button" class="btn btn-success">Konfirmasi</button></a>
+                    <a href="{{url('/delete-order-investasi/'.$o->id)}}"><button type="button" class="btn btn-danger">Tolak</button></a>
                   </td>
                 </tr>    
                 @endforeach

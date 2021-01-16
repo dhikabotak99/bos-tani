@@ -71,7 +71,7 @@ class investasiController extends Controller
                     ->where('order_investasi.id', '=', $id)
                     ->update(['order_investasi.status' => "Sudah di Konfirmasi"]);
         
-        return redirect('history');
+        return redirect('history-investasi');
     }
 
     public function deleteOrderInvestasi($id){
@@ -79,6 +79,6 @@ class investasiController extends Controller
 
         $order->delete();
 
-        return redirect('history');
+        return redirect('history-investasi');
     }
 }
