@@ -7,6 +7,14 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel-rtl/">
 
+        <style>
+            body {
+                background-color: rgb(217, 217, 211);
+            }
+            #barang {
+                background-color: white;
+            }
+        </style>
     </head>
     <body>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
@@ -21,13 +29,13 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item active">
-                                <a class="nav-link" href="/">Home</a>
+                                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/product">Produk</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/investasi">Investasi <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="/investasi">Investasi</a>
                             </li>
                         </ul>
                     </div>
@@ -47,45 +55,44 @@
                 </div>
             </nav>
         </header>
-        <!-- END OF NAVBAR -->
-
-        <!-- SIDEBAR -->
-        <!-- <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Active</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-        </ul> -->
-        <!-- END OF SIDE BAR -->
         <br>
         <br>
         <br>
-        @if(count($investasi)>0)
-        <div class="row g-3 d-flex justify-content-center">
-            @foreach($investasi as $i)
-            <div class="card" style="width: 18rem;">
-                <img src="{{url('/images/'.$i->img_path)}}" class="card-img-top" height="262px" width="262px">
-                <div class="card-body">
-                    <h5 class="card-title">{{$i->Nama}}</h5>
-                    <p class="card-text">Hasil: {{$i->Hasil}}%</p>
-                    <p class="card-text">Periode: {{$i->Periode_Kontrak}} Tahun</p>
-                    <p class="card-text">Bagi Hasil:{{$i->Periode_Bagi_hasil}} Tahun</p>
-                    <h3 class="card-title">IDR{{$i->Harga}}000.00</h3>
-                    <a href="{{url('/order-investasi/'.$i->id)}}" class="btn btn-success">Order Now</a>
-                </div>
+        <br>
+        <div class="d-flex p-2 bd-highlight container-sm" id="barang">
+            <img src="{{url('/images/'.$investasi->img_path)}}" class="rounded" height="275px" width="275px">
+            &emsp;
+            <div class="flex flex-lg-row">
+                <form action="/postInvestasi" method="GET">
+                <h1 style="display: none;">asd</h1>
+                    <input type="hidden" name="idInvestasi" value="{{$investasi->id}}">
+                    <h3 class="card-title">{{$investasi->Nama}}</h3>
+                    <br>
+                    <div class="p-3 mb-2 bg-light text-warning"><h4>Rp {{$investasi->Harga}},00</h4></div>
+                    <input type="hidden" name="Harga" value="{{$investasi->Harga}}">
+                    <label for="kontrak">jumlah unit</label>
+                    <input type="number" class="form-control" name="jumlah" value="1" min="1"><small>Tersisa {{$investasi->Unit_Tersisa}} unit</small>
+                    <br>
+                    <br>
+                    <label for="kontrak">periode kontrak</label>
+                    <input type="number" class="form-control" name="kontrak" value="1" min="1">
+                    <br>
+                    <br>
+                    <button type="submit" class="p-2 btn btn-success">Pesan Sekarang</button>
+                </form>
             </div>
-            &nbsp;&nbsp;
-            @endforeach
         </div>
-        @else
-        <center>
-            <p>There is no product...</p>
-        </center>
-        @endif
+        <br>
+        <div class="d-flex p-2 bd-highlight container-sm" id="barang">
+            <img src="{{url('/images/indomart.jpg')}}" class="rounded-circle" height="100px" width="100px">
+            &emsp;
+            <div class="flex flex-lg-row">
+                <h3 class="card-title">Surabaya Jaya</h3>
+                <br>
+                
+            </div>
+        </div>
+        <br>
+        <br>
     </body>
 </html>

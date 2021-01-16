@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class investasi extends Model
 {
+
+    public function orderInvestasi(){
+        return $this->belongsTo('App\Models\order_investasi');
+    }
+
     protected $table = 'investasi';
     use HasFactory;
 }

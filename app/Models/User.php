@@ -13,6 +13,10 @@ class User extends Authenticatable
         return $this->belongsTo('App\Models\order');
     }
 
+    public function orderInvestasi(){
+        return $this->belongsTo('App\Models\order_investasi');
+    }
+
     protected $table = 'users';
     use HasFactory, Notifiable;
 

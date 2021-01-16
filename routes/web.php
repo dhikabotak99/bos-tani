@@ -25,6 +25,9 @@ Route::get('/product', [productController::class, 'allProduct']);
 
 use App\Http\Controllers\investasiController;
 Route::get('/investasi', [investasiController::class, 'index']);
+Route::get('/order-investasi/{id}', [investasiController::class, 'investasi'])->middleware('auth');;
+Route::get('/postInvestasi', [investasiController::class, 'postInvestasi'])->middleware('auth');;
+Route::get('/history-investasi', [investasiController::class, 'historyInvestasi'])->middleware('auth');;
 
 use App\Http\Controllers\orderController;
 Route::get('/order-product/{id}', [orderController::class, 'order'])->middleware('auth');
@@ -39,7 +42,6 @@ Route::get('/register', [authController::class, 'register']);
 Route::post('/formRegister', [authController::class, 'formRegister']);
 
 use App\Http\Controllers\adminController;
-Route::middleware('isPenjual')->group(function() {
     Route::get('/dashboard-admin', [adminController::class, 'index']);
     Route::get('/products ', [adminController::class, 'products']);
     Route::get('/add-product', [adminController::class, 'addProduct']);
@@ -58,4 +60,3 @@ Route::middleware('isPenjual')->group(function() {
     Route::get('/update-investasi/{id}', [adminController::class, 'updateInvestasi']);
     Route::POST('/post-update-investasi/{id}', [adminController::class, 'postUpdateInvestasi']);
     Route::get('/deleteInvestasi/{id}', [adminController::class, 'deleteInvestasi']);
-});
